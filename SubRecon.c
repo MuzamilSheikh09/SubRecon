@@ -86,7 +86,7 @@ int main() {
     } else if ((pid4 = fork()) == 0) {
         // Child process 4: run naabu
         printf("Naabu started at: %02d:%02d:%02d\n", start_tm->tm_hour, start_tm->tm_min, start_tm->tm_sec);
-        sprintf(command, "cat Alive-domain.txt | dnsx -silent -a -ro | naabu -silent  -top-ports 1000 -exclude-ports 80,443,21,22,25 -o naabu.txt");
+        sprintf(command, "cat Alive-domain.txt | dnsx -silent -a -ro | naabu -silent  -top-ports 1000 -exclude-ports 80,443,21,25 -o naabu.txt");
         system(command);
         exit(0);
     }
